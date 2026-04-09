@@ -71,6 +71,33 @@
     .testimonial { font-style:italic; }
 
     footer { text-align:center; padding:30px; background:#000; }
+    .hero {
+  background-image: url('images/FOTO1.png');
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.hero * {
+  position: relative;
+  z-index: 1;
+}
   </style>
 </head>
 <body>
