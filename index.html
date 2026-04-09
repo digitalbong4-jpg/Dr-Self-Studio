@@ -31,11 +31,8 @@
 
     .hero {
       height: 100vh;
-      background: url('images/hero.jpg') center/cover no-repeat;
       display:flex; flex-direction:column; justify-content:center; align-items:center;
       text-align:center;
-      background-color:rgba(0,0,0,0.5);
-      background-blend-mode:overlay;
       padding: 0 40px;
     }
     .hero h2 {
@@ -71,11 +68,21 @@
     .testimonial { font-style:italic; }
 
     footer { text-align:center; padding:30px; background:#000; }
-    .hero {
-  background-image: url('images/FOTO1.png');
-  background-size: cover;
+    @keyframes slideBg {
+  0%   { background-image: url('images/FOTO1.png'); }
+  25%  { background-image: url('images/FOTO2.png'); }
+  50%  { background-image: url('images/FOTO3.png'); }
+  75%  { background-image: url('images/FOTO4.png'); }
+  100% { background-image: url('images/FOTO1.png'); }
+}
+    .hero { 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: black;
   background-position: center;
-  height: 500px;
+  height: 100vh;
+
+  animation: slideBg 20s infinite ease-in-out;
 
   display: flex;
   flex-direction: column;
