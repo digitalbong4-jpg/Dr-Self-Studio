@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DR Self Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { margin:0; font-family:'Poppins',sans-serif; background:#0f0f0f; color:#fff; }
+    body { padding-top:80px; }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 30px;
+      background:#000;
+      z-index:1000;
+      box-sizing: border-box;
+    }
+    nav a {
+      color:#fff;
+      margin-left:15px;
+      text-decoration:none;
+      font-size:14px;
+      white-space:nowrap;
+    }
+
+    .hero {
+      height: 100vh;
+      background: url('images/hero.jpg') center/cover no-repeat;
+      display:flex; flex-direction:column; justify-content:center; align-items:center;
+      text-align:center;
+      background-color:rgba(0,0,0,0.5);
+      background-blend-mode:overlay;
+      padding: 0 40px;
+    }
+    .hero h2 {
+      font-size:42px;
+      margin:0;
+      line-height:1.2;
+    }
+    .hero { padding: 0 20px; }
+    .hero p { opacity:0.8; max-width:90%; }
+    .btn {
+      margin-top:20px;
+      padding:12px 25px;
+      border-radius:30px;
+      text-decoration:none;
+      font-weight:600;
+      display:inline-block;
+      white-space:nowrap;
+      max-width:100%;
+    }
+    .btn-primary { background:#25D366; color:#fff; }
+    .btn-secondary { background:#fff; color:#000; margin-left:10px; }
+
+    .section { padding:80px 20px; max-width:1100px; margin:auto; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; }
+
+    .card { background:#1a1a1a; padding:25px; border-radius:15px; text-align:center; }
+    .price { font-size:28px; font-weight:700; }
+
+    .highlight { background:#fff; color:#000; text-align:center; padding:60px 20px; }
+
+    .gallery img { width:100%; border-radius:15px; }
+
+    .testimonial { font-style:italic; }
+
+    footer { text-align:center; padding:30px; background:#000; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>DR Self Studio</h1>
+  <nav>
+    <a href="#pricing">Harga</a>
+    <a href="#gallery">Galeri</a>
+    <a href="#testi">Testimoni</a>
+    <a href="#contact">Booking</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h2>Capture Your Moment</h2>
+  <p>Self Photo Studio dengan konsep modern & estetik</p>
+  <div>
+    <a href="https://wa.me/6281234567890" class="btn btn-primary">Booking Sekarang</a>
+    <a href="#gallery" class="btn btn-secondary">Lihat Galeri</a>
+  </div>
+</div>
+
+<div class="section" id="pricing">
+  <h2 style="text-align:center;">Paket Harga</h2>
+  <div class="grid">
+    <div class="card"><h3>Basic</h3><div class="price">Rp 50K</div><p>15 menit • 2 orang • all file</p></div>
+    <div class="card"><h3>Standard</h3><div class="price">Rp 80K</div><p>30 menit • 3 orang • all file</p></div>
+    <div class="card"><h3>Premium</h3><div class="price">Rp 120K</div><p>45 menit • 4 orang • all file + cetak</p></div>
+  </div>
+</div>
+
+<div class="highlight">
+  <h2>Kenapa Pilih DR Self Studio?</h2>
+  <p>Private Room • Unlimited Shoot • HD Quality • Estetik Lighting</p>
+</div>
+
+<div class="section" id="gallery">
+  <h2 style="text-align:center;">Galeri</h2>
+  <div class="grid gallery">
+    <img src="images/FOTO1.png">
+    <img src="images/FOTO2.png">
+    <img src="images/FOTO3.png">
+    <img src="images/FOTO4.png">
+  </div>
+</div>
+
+<div class="section" id="testi">
+  <h2 style="text-align:center;">Apa Kata Mereka</h2>
+
+  <div class="testimonial-wrapper">
+    <div class="testimonial-track" id="testiTrack">
+
+      <div class="card testimonial">"Tempatnya nyaman banget!"<br><strong>- Andi</strong></div>
+      <div class="card testimonial">"Hasil foto estetik banget!"<br><strong>- Rina</strong></div>
+      <div class="card testimonial">"Worth it buat konten IG!"<br><strong>- Dika</strong></div>
+      <div class="card testimonial">"Private banget, bebas pose"<br><strong>- Sari</strong></div>
+      <div class="card testimonial">"Lightingnya bagus banget"<br><strong>- Budi</strong></div>
+      <div class="card testimonial">"Tempatnya clean & modern"<br><strong>- Nia</strong></div>
+      <div class="card testimonial">"Pasti balik lagi kesini!"<br><strong>- Fajar</strong></div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+.testimonial-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.testimonial-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scrollTesti 25s linear infinite;
+}
+
+.testimonial-track .card {
+  min-width: 250px;
+}
+
+@keyframes scrollTesti {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+</style>
+
+<script>
+// duplicate items biar looping halus
+const track = document.getElementById('testiTrack');
+track.innerHTML += track.innerHTML;
+</script>
+
+<div class="section" id="contact">
+  <h2 style="text-align:center;">Booking Sekarang</h2>
+  <p style="text-align:center;">Follow Instagram: @drselfstudio.id</p>
+  <div style="text-align:center;">
+    <a href="https://wa.me/6281357574224" class="btn btn-primary">Chat WhatsApp</a>
+  </div>
+</div>
+
+<footer>
+  © 2026 DR Self Studio | Follow IG @drselfstudio.id
+</footer>
+
+</body>
+</html>
